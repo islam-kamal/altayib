@@ -84,7 +84,7 @@ class _RegisterationState extends State<Registeration> {
                     ],
                   ),
                   //contain of login or register page
-                 // goToRegister(),
+                  goToRegister(),
                 ]),
           ),
         ),
