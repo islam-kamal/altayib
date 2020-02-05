@@ -15,7 +15,8 @@ class Registeration extends StatefulWidget {
 
 class _RegisterationState extends State<Registeration> {
   bool isChecked = false;
-
+  GlobalKey _registerKey=new GlobalKey();
+  GlobalKey _loginKey=new GlobalKey();
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -36,7 +37,7 @@ class _RegisterationState extends State<Registeration> {
                           width: 150,
                           height: 45,
                           child: new RaisedButton(
-                            key: _registerPageKey,
+                            key: _registerKey,
                             onPressed: goToRegister,
                             child: new Text(
                               "تسجيل جديد",
@@ -61,6 +62,7 @@ class _RegisterationState extends State<Registeration> {
                           width: 150,
                           height: 45,
                           child: new RaisedButton(
+                            key: _loginKey,
                             onPressed: goToLogin,
                             child: new Text(
                               "تسجيل دخول",
@@ -82,8 +84,7 @@ class _RegisterationState extends State<Registeration> {
                     ],
                   ),
                   //contain of login or register page
-
-                  goToRegister(),
+                 // goToRegister(),
                 ]),
           ),
         ),
