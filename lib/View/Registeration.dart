@@ -15,6 +15,7 @@ class Registeration extends StatefulWidget {
 
 class _RegisterationState extends State<Registeration> {
   bool isChecked = false;
+  bool statusKey=true;
   GlobalKey _registerKey=new GlobalKey();
   GlobalKey _loginKey=new GlobalKey();
   @override
@@ -38,7 +39,11 @@ class _RegisterationState extends State<Registeration> {
                           height: 45,
                           child: new RaisedButton(
                             key: _registerKey,
-                            onPressed: goToRegister,
+                            onPressed: (){
+                              setState(() {
+                                statusKey=false;
+                              });
+                            },
                             child: new Text(
                               "تسجيل جديد",
                               style: TextStyle(
@@ -63,7 +68,11 @@ class _RegisterationState extends State<Registeration> {
                           height: 45,
                           child: new RaisedButton(
                             key: _loginKey,
-                            onPressed: goToLogin,
+                            onPressed: (){
+                              setState(() {
+                                statusKey=true;
+                              });
+                            },
                             child: new Text(
                               "تسجيل دخول",
                               style: TextStyle(
@@ -84,7 +93,7 @@ class _RegisterationState extends State<Registeration> {
                     ],
                   ),
                   //contain of login or register page
-                  goToRegister(),
+                  statusKey==true?goToLogin():  goToRegister(),
                 ]),
           ),
         ),
@@ -148,7 +157,6 @@ class _RegisterationState extends State<Registeration> {
                 textAlign: TextAlign.right,
               ),
               activeColor: Colors.blue,
-              checkColor: Colors.orange,
             ),
           ),
           new SizedBox(
@@ -280,7 +288,7 @@ class _RegisterationState extends State<Registeration> {
                 textAlign: TextAlign.right,
               ),
               activeColor: Colors.blue,
-              checkColor: Colors.orange,
+
             ),
           ),
           new SizedBox(
