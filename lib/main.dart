@@ -1,9 +1,12 @@
+import 'package:altayib/View/Registeration.dart';
 import 'package:flutter/material.dart';
-import 'package:altayib/UI/Home.dart';
+import 'View/Home.dart';
+import 'View/SplashPage.dart';
+
 void main(){
   runApp(
     new MaterialApp(
-      home: Home(),
+      home: Registeration(),
       debugShowCheckedModeBanner: false,
 
     ),
